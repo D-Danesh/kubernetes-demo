@@ -1,4 +1,4 @@
-﻿apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bar-deployment
@@ -16,15 +16,15 @@ spec:
         app: bar
     spec:
       containers:
-      - name: bar
-        image: wqd180067/http-echo
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        args: ["-listen=:80", "-text='bar'"]
+        - name: bar
+          image: wqd180067/http-echo:0.1.21-1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          args: ["-listen=:80", "-text='bar'"]
