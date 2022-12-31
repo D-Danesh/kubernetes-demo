@@ -4,11 +4,9 @@ metadata:
   name: foo-service
   namespace: http-echo
 spec:
-  type: NodePort
   selector:
     app: foo
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30011
